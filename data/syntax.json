@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "command": "ls -la",
+    "description": "List all files in long format, including hidden files",
+    "category": "bash",
+    "tags": ["list", "directory", "bash"]
+  },
+  {
+    "id": "2",
+    "command": "Get-Process",
+    "description": "Shows all currently running processes",
+    "category": "powershell",
+    "tags": ["process", "task", "powershell"]
+  },
+  {
+    "id": "3",
+    "command": "find . -name '*.js'",
+    "description": "Find all JavaScript files in current directory and subdirectories",
+    "category": "bash",
+    "tags": ["find", "search", "files", "bash"]
+  },
+  {
+    "id": "4",
+    "command": "Get-ChildItem -Recurse -Filter *.txt",
+    "description": "Find all text files recursively",
+    "category": "powershell",
+    "tags": ["find", "search", "files", "powershell"]
+  },
+  {
+    "id": "5",
+    "command": "ps aux | grep node",
+    "description": "Filter running processes to show only Node.js processes",
+    "category": "bash",
+    "tags": ["process", "filter", "node", "bash"]
+  },
+  {
+    "id": "6",
+    "command": "python -m http.server 8000",
+    "description": "Start a simple HTTP server on port 8000",
+    "category": "python",
+    "tags": ["server", "http", "python"]
+  },
+  {
+    "id": "7",
+    "command": "Set-Location -Path C:\\Users",
+    "description": "Change directory to C:\\Users",
+    "category": "powershell",
+    "tags": ["navigation", "directory", "powershell"]
+  },
+  {
+    "id": "8",
+    "command": "source ~/.zshrc",
+    "description": "Reload zsh configuration",
+    "category": "zsh",
+    "tags": ["config", "reload", "zsh"]
+  }
+]

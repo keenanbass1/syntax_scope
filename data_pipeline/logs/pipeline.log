@@ -1,0 +1,85 @@
+2025-04-06 20:08:37,044 - syntaxscope - INFO - Starting SyntaxScope data pipeline
+2025-04-06 20:08:37,044 - syntaxscope - INFO - 
+=== Step 1: Scraping TLDR pages ===
+2025-04-06 20:08:37,052 - syntaxscope - INFO - Cloning TLDR repository...
+2025-04-06 20:12:32,848 - syntaxscope - INFO - Found 5635 markdown files
+2025-04-06 20:12:38,018 - syntaxscope - INFO - Saved JSON to /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/data_pipeline/data/raw/tldr/tldr_commands.json
+2025-04-06 20:12:38,019 - syntaxscope - INFO - ✅ Scraped 5635 commands from TLDR pages
+2025-04-06 20:12:38,020 - syntaxscope - INFO - Output written to /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/data_pipeline/data/raw/tldr/tldr_commands.json
+2025-04-06 20:12:38,020 - syntaxscope - INFO - 
+Category breakdown:
+2025-04-06 20:12:38,020 - syntaxscope - INFO -   - bash: 5575 commands
+2025-04-06 20:12:38,021 - syntaxscope - INFO -   - powershell: 37 commands
+2025-04-06 20:12:38,021 - syntaxscope - INFO -   - python: 21 commands
+2025-04-06 20:12:38,022 - syntaxscope - INFO -   - zsh: 2 commands
+2025-04-06 20:12:38,024 - syntaxscope - INFO - Scraped 5635 commands from TLDR pages
+2025-04-06 20:12:38,024 - syntaxscope - INFO - 
+=== Step 2: Enriching data with categories and tags ===
+2025-04-06 20:12:38,127 - syntaxscope - INFO - Enriching 5635 items...
+2025-04-06 20:12:39,080 - syntaxscope - INFO - Saved JSON to /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/data_pipeline/data/processed/enriched_commands.json
+2025-04-06 20:12:39,081 - syntaxscope - INFO - ✅ Enriched 5635 items
+2025-04-06 20:12:39,082 - syntaxscope - INFO - Output written to /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/data_pipeline/data/processed/enriched_commands.json
+2025-04-06 20:12:39,083 - syntaxscope - INFO - 
+Category breakdown:
+2025-04-06 20:12:39,084 - syntaxscope - INFO -   - other: 2000 items
+2025-04-06 20:12:39,084 - syntaxscope - INFO -   - file-management: 1073 items
+2025-04-06 20:12:39,085 - syntaxscope - INFO -   - development: 559 items
+2025-04-06 20:12:39,086 - syntaxscope - INFO -   - system-admin: 538 items
+2025-04-06 20:12:39,089 - syntaxscope - INFO -   - shell: 466 items
+2025-04-06 20:12:39,090 - syntaxscope - INFO -   - containers: 341 items
+2025-04-06 20:12:39,091 - syntaxscope - INFO -   - network: 201 items
+2025-04-06 20:12:39,092 - syntaxscope - INFO -   - monitoring: 139 items
+2025-04-06 20:12:39,093 - syntaxscope - INFO -   - text-processing: 124 items
+2025-04-06 20:12:39,094 - syntaxscope - INFO -   - database: 112 items
+2025-04-06 20:12:39,095 - syntaxscope - INFO -   - security: 82 items
+2025-04-06 20:12:39,097 - syntaxscope - INFO - Enriched 5635 commands
+2025-04-06 20:12:39,099 - syntaxscope - INFO - 
+=== Step 3: Enriching with AI explanations ===
+2025-04-06 20:12:39,188 - syntaxscope - INFO - Loaded 5635 commands from /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/data_pipeline/data/processed/enriched_commands.json
+2025-04-06 20:12:39,192 - syntaxscope - ERROR - Ollama not available at http://localhost:11434. Make sure it's running.
+2025-04-06 20:12:39,193 - syntaxscope - INFO - Added AI explanations to 0 commands
+2025-04-06 20:12:39,193 - syntaxscope - INFO - 
+=== Step 4: Combining all data sources ===
+2025-04-06 20:12:39,333 - syntaxscope - INFO - Loaded 5635 enriched commands from /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/data_pipeline/data/processed/enriched_commands.json
+2025-04-06 20:12:39,655 - syntaxscope - INFO - Data validation successful
+2025-04-06 20:12:40,047 - syntaxscope - INFO - Saved JSON to /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/data_pipeline/data/processed/combined_data.json
+2025-04-06 20:12:40,048 - syntaxscope - INFO - Saved 5556 combined commands to /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/data_pipeline/data/processed/combined_data.json
+2025-04-06 20:12:40,049 - syntaxscope - INFO - Commands with explanations: 0/5556
+2025-04-06 20:12:40,049 - syntaxscope - INFO - Commands with tags: 5556/5556
+2025-04-06 20:12:40,049 - syntaxscope - INFO - Category breakdown:
+2025-04-06 20:12:40,049 - syntaxscope - INFO -   - other: 1976 commands
+2025-04-06 20:12:40,049 - syntaxscope - INFO -   - file-management: 1049 commands
+2025-04-06 20:12:40,049 - syntaxscope - INFO -   - development: 559 commands
+2025-04-06 20:12:40,050 - syntaxscope - INFO -   - system-admin: 528 commands
+2025-04-06 20:12:40,050 - syntaxscope - INFO -   - shell: 460 commands
+2025-04-06 20:12:40,050 - syntaxscope - INFO -   - containers: 341 commands
+2025-04-06 20:12:40,051 - syntaxscope - INFO -   - network: 198 commands
+2025-04-06 20:12:40,052 - syntaxscope - INFO -   - monitoring: 130 commands
+2025-04-06 20:12:40,052 - syntaxscope - INFO -   - text-processing: 121 commands
+2025-04-06 20:12:40,053 - syntaxscope - INFO -   - database: 112 commands
+2025-04-06 20:12:40,054 - syntaxscope - INFO -   - security: 82 commands
+2025-04-06 20:12:40,054 - syntaxscope - INFO - Combined 5556 commands
+2025-04-06 20:12:40,055 - syntaxscope - INFO - 
+=== Step 5: Exporting to JSON for frontend ===
+2025-04-06 20:12:40,144 - syntaxscope - INFO - Loaded 5556 commands from /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/data_pipeline/data/processed/combined_data.json
+2025-04-06 20:12:41,244 - syntaxscope - INFO - Saved JSON to /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/public/data/syntax.json
+2025-04-06 20:12:41,244 - syntaxscope - INFO - Exported 5556 commands to /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/public/data/syntax.json
+2025-04-06 20:12:41,246 - syntaxscope - INFO - Commands with explanations: 0/5556
+2025-04-06 20:12:41,246 - syntaxscope - INFO - Commands with tags: 5556/5556
+2025-04-06 20:12:41,247 - syntaxscope - INFO - Category breakdown:
+2025-04-06 20:12:41,247 - syntaxscope - INFO -   - other: 1976 commands
+2025-04-06 20:12:41,248 - syntaxscope - INFO -   - file-management: 1049 commands
+2025-04-06 20:12:41,248 - syntaxscope - INFO -   - development: 559 commands
+2025-04-06 20:12:41,249 - syntaxscope - INFO -   - system-admin: 528 commands
+2025-04-06 20:12:41,249 - syntaxscope - INFO -   - shell: 460 commands
+2025-04-06 20:12:41,250 - syntaxscope - INFO -   - containers: 341 commands
+2025-04-06 20:12:41,250 - syntaxscope - INFO -   - network: 198 commands
+2025-04-06 20:12:41,250 - syntaxscope - INFO -   - monitoring: 130 commands
+2025-04-06 20:12:41,251 - syntaxscope - INFO -   - text-processing: 121 commands
+2025-04-06 20:12:41,251 - syntaxscope - INFO -   - database: 112 commands
+2025-04-06 20:12:41,252 - syntaxscope - INFO -   - security: 82 commands
+2025-04-06 20:12:41,252 - syntaxscope - INFO - Exported 5556 commands to frontend
+2025-04-06 20:12:41,253 - syntaxscope - INFO - 
+=== Pipeline completed in 244.21 seconds ===
+2025-04-06 20:12:41,253 - syntaxscope - INFO - Final output: /mnt/c/Users/keena/desktop/projects/dev/web/syntax-scope/public/data/syntax.json
+2025-04-06 20:12:41,263 - syntaxscope - INFO - Pipeline completed successfully

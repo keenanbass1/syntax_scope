@@ -14,14 +14,18 @@ try {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    ignoreDuringBuilds: true,
+    // Only ignore ESLint errors if SKIP_TYPE_CHECK is true
+    ignoreDuringBuilds: process.env.SKIP_TYPE_CHECK === 'true',
   },
+  // Only ignore TypeScript errors if SKIP_TYPE_CHECK is true
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: process.env.SKIP_TYPE_CHECK === 'true',
   },
   images: {
     unoptimized: true,
   },
+  // Ensure SWC is used for compilation (required for next/font)
+  swcMinify: true,
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,

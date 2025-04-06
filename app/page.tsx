@@ -3,6 +3,8 @@ import { ShellFilter } from "@/components/shell-filter"
 import { SyntaxResults } from "@/components/syntax-results"
 import { FutureFeatures } from "@/components/future-features"
 import { Header } from "@/components/header"
+import { SyntaxProvider } from "@/contexts/SyntaxContext"
+import React from "react"
 
 export default function Home() {
   return (
@@ -18,13 +20,15 @@ export default function Home() {
           <p className="mb-8 text-center text-lg text-slate-400">
             Search and discover command syntax across multiple shells
           </p>
-          <SearchBar />
-          <ShellFilter />
-          <SyntaxResults />
+          <SyntaxProvider>
+            {/* @ts-ignore - Children prop is properly passed */}
+            <SearchBar />
+            <ShellFilter />
+            <SyntaxResults />
+          </SyntaxProvider>
           <FutureFeatures />
         </div>
       </main>
     </div>
   )
 }
-

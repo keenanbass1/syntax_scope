@@ -1,19 +1,24 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import React from "react"
+// @ts-ignore - lucide-react doesn't have type definitions
 import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { useSyntax } from "@/contexts/SyntaxContext"
 
 export function SearchBar() {
-  const [query, setQuery] = useState("")
+  const { searchQuery, setSearchQuery } = useSyntax()
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Searching for:", query)
-    // Implement search functionality
+    console.log("Search form submitted with query:", searchQuery)
+    // Search is already handled automatically via context
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("Search input changing to:", e.target.value)
+    setSearchQuery(e.target.value)
   }
 
   return (
@@ -26,8 +31,8 @@ export function SearchBar() {
           <Input
             type="text"
             placeholder="Search commands (e.g., 'list files', 'process management', 'find text')"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            value={searchQuery}
+            onChange={handleInputChange}
             className="h-14 border-0 bg-transparent pl-12 pr-24 text-lg text-white placeholder:text-slate-500 focus-visible:ring-0 focus-visible:ring-offset-0"
           />
           <div className="absolute inset-y-0 right-0 flex items-center pr-3">

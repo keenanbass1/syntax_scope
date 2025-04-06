@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Command Syntax Schema",
+  "description": "Schema for command syntax data in SyntaxScope",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "command", "description", "category", "tags"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Unique identifier for the command"
+      },
+      "command": {
+        "type": "string",
+        "description": "The command syntax"
+      },
+      "description": {
+        "type": "string",
+        "description": "Brief description of what the command does"
+      },
+      "category": {
+        "type": "string",
+        "description": "Primary shell or language (bash, powershell, zsh, python, etc.)"
+      },
+      "tags": {
+        "type": "array",
+        "description": "Tags for categorizing and searching",
+        "items": {
+          "type": "string"
+        }
+      },
+      "explanation": {
+        "type": "string",
+        "description": "AI-generated detailed explanation of how the command works"
+      },
+      "examples": {
+        "type": "array",
+        "description": "Example usages of the command",
+        "items": {
+          "type": "object",
+          "required": ["code", "description"],
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "Example command code"
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of what the example does"
+            }
+          }
+        }
+      },
+      "source": {
+        "type": "object",
+        "description": "Information about the source of this command",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the source (e.g., 'tldr-pages')"
+          },
+          "url": {
+            "type": "string",
+            "description": "URL to the source"
+          },
+          "license": {
+            "type": "string",
+            "description": "License of the source material"
+          }
+        }
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "description": "When this entry was created"
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "description": "When this entry was last updated"
+      }
+    }
+  }
+}
